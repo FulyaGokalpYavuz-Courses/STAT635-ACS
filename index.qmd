@@ -1,6 +1,6 @@
 ---
 title: "Advanced Computational Statistics"
-subtitle: "STAT 635 · Fall 2026 · Department of Statistics, Middle East Technical University"
+subtitle: "STAT 635 • Fall 2026 • Department of Statistics, Middle East Technical University"
 ---
 
 ::: {.hero}
@@ -9,28 +9,73 @@ A graduate course on the algorithms behind modern statistical inference: MCMC, E
 :::
 :::
 
+::: {.hero-panel}
+<div class="pill-row">
+  <span class="pill">Graduate course</span>
+  <span class="pill">R + Python</span>
+  <span class="pill">Research project</span>
+</div>
+
+<div class="info-grid">
+  <div>
+    <h4>Meeting time</h4>
+    <p>Wednesdays<br>09:40–12:30</p>
+  </div>
+  <div>
+    <h4>Instructor</h4>
+    <p>Assoc. Prof. Dr. Fulya Gökalp Yavuz</p>
+  </div>
+  <div>
+    <h4>Course platforms</h4>
+    <p>ODTUClass + GitHub</p>
+  </div>
+</div>
+:::
+
 ## Course at a glance
 
-| | |
+| Item | Details |
 |---|---|
 | **Course code** | 2460635 |
 | **Credit / ECTS** | 3 / 8.0 |
-| **Meetings** | Wednesdays, 09:40 to 12:30 |
+| **Meeting pattern** | Wednesday seminars and computational lab sessions |
 | **Instructor** | Assoc. Prof. Dr. Fulya Gökalp Yavuz |
 | **Office** | Statistics Department, Office 139 |
 | **Email** | [fgokalp@metu.edu.tr](mailto:fgokalp@metu.edu.tr) |
-| **Office hours** | Wednesday 13:30 to 14:30 (walk-in), or any day/time by appointment |
+| **Office hours** | Wednesday 13:30–14:30 or by appointment |
 | **Programming** | R, Python |
-| **Course platforms** | ODTUClass (materials and announcements), GitHub (assignments and projects) |
+
+## Why this course matters
+
+This course develops the computational mindset required for modern statistical research. Students work with methods that are central to simulation-based inference, latent variable models, high-dimensional data analysis, and reproducible scientific computation.
+
+## Learning path
+
+::: {.feature-grid}
+::: {.feature-card}
+### Computational foundations
+Monte Carlo methods, simulation design, numerical integration and algorithmic reasoning.
+:::
+
+::: {.feature-card}
+### Statistical learning tools
+EM, bootstrap, importance sampling, optimization, and model-based inference.
+:::
+
+::: {.feature-card}
+### Research practice
+Independent project design, data analysis, reproducibility, and professional communication.
+:::
+:::
 
 ## Where to go next
 
 - **[Syllabus](syllabus.qmd)**: objectives, outcomes, grading and policies
-- **[Weekly Schedule](schedule.qmd)**: topics, readings and assignments, added week by week
-- **[Resources](resources.qmd)**: references, software and links
+- **[Weekly Schedule](schedule.qmd)**: topics, readings and assignments
+- **[Resources](resources.qmd)**: software, databases and helpful references
 
 ## Announcements
 
 ::: {.callout-note}
-No announcements yet. Edit this section in `index.qmd`.
+No announcements yet. This section can be updated as the semester progresses.
 :::
