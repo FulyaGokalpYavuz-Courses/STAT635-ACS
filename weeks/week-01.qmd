@@ -14,7 +14,7 @@ description: "Mathematical notation, probability, likelihood, Bayesian methods, 
 - Statistical Limit Theory
 - Markov Chains
 
-::: {.panel-tabset}
+:::  {.callout-note collapse="true"}
 
 ## Taylor's Theorem and Mathematical Limit Theory
 
