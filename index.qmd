@@ -23,12 +23,6 @@ A graduate course on the algorithms behind modern statistical inference: MCMC, E
 | **Programming** | R, Python |
 | **Course platforms** | ODTUClass (materials and announcements), GitHub (assignments and projects) |
 
-## Why Take This Course?
-
-Modern statistics runs on computation. This course develops the **algorithmic thinking** needed for simulation-based inference, latent variable models, high-dimensional analysis, and reproducible statistical computing.
-
-You'll learn *why* methods work, *how* to implement them efficiently, and *when* to apply them.
-
 ## What You'll Learn
 
 **Computational Foundations**
