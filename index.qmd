@@ -9,84 +9,45 @@ A graduate course on the algorithms behind modern statistical inference: MCMC, E
 :::
 :::
 
-::: {.hero-panel}
-
-<div class="pill-row">
-  <span class="pill">Graduate Course</span>
-  <span class="pill">R & Python</span>
-  <span class="pill">Research Project</span>
-</div>
-
-<div class="info-grid">
-  <div>
-    <h4>📅 Meeting Time</h4>
-    <p>Wednesdays<br>09:40–12:30</p>
-  </div>
-  <div>
-    <h4>👩‍🏫 Instructor</h4>
-    <p>Assoc. Prof. Dr. Fulya Gökalp Yavuz</p>
-  </div>
-  <div>
-    <h4>🔗 Platforms</h4>
-    <p>ODTUClass & GitHub</p>
-  </div>
-</div>
-
-:::
-
 ## Course at a Glance
 
 | Item | Details |
 |---|---|
 | **Course code** | 2460635 |
 | **Credit / ECTS** | 3 / 8.0 |
-| **Meetings** | Wednesday seminars & computational labs |
+| **Meetings** | Wednesdays, 09:40 to 12:30 |
 | **Instructor** | Assoc. Prof. Dr. Fulya Gökalp Yavuz |
 | **Office** | Statistics Department, Office 139 |
 | **Email** | [fgokalp@metu.edu.tr](mailto:fgokalp@metu.edu.tr) |
-| **Office hours** | Wed 13:30–14:30 or by appointment |
-| **Programming** | R, Python, SQL |
+| **Office hours** | Wednesday 13:30 to 14:30 (walk-in), or by appointment |
+| **Programming** | R, Python |
+| **Course platforms** | ODTUClass (materials and announcements), GitHub (assignments and projects) |
 
 ## Why Take This Course?
 
-Modern statistics runs on computation. This course develops the **algorithmic thinking** needed for:
+Modern statistics runs on computation. This course develops the **algorithmic thinking** needed for simulation-based inference, latent variable models, high-dimensional analysis, and reproducible statistical computing.
 
-- Building simulation-based inference methods
-- Working with latent variable models and missing data
-- High-dimensional data analysis
-- Reproducible, scalable statistical computing
-
-You'll learn *why* methods work, *how* to implement them efficiently, and *when* to apply them to real problems.
+You'll learn *why* methods work, *how* to implement them efficiently, and *when* to apply them.
 
 ## What You'll Learn
 
-::: {.feature-grid}
+**Computational Foundations**
+: Monte Carlo methods, numerical integration, simulation design, and algorithmic thinking.
 
-::: {.feature-card}
-### Computational Foundations
-Monte Carlo methods, numerical integration, simulation design, and algorithmic thinking for statistical problems.
-:::
+**Statistical Inference Tools**
+: EM algorithm, bootstrap, importance sampling, optimization, and MCMC methods.
 
-::: {.feature-card}
-### Statistical Inference Tools
-EM algorithm, bootstrap, importance sampling, optimization techniques, and Markov Chain Monte Carlo (MCMC).
-:::
+**Research Practice**
+: Independent project design, reproducible analysis, and professional communication.
 
-::: {.feature-card}
-### Research Practice
-Independent project design, reproducible analysis, performance evaluation, and professional communication of results.
-:::
+## Where to go next
 
-:::
-
-## Navigation
-
-- **[Syllabus](syllabus.qmd)** — Course objectives, learning outcomes, grading, and policies
-- **[Weekly Schedule](schedule.qmd)** — Topics, readings, and assignments (updated weekly)
-- **[Resources](resources.qmd)** — References, software, platforms, and useful links
+- **[Syllabus](syllabus.qmd)**: objectives, outcomes, grading and policies
+- **[Weekly Schedule](schedule.qmd)**: topics, readings and assignments, added week by week
+- **[Resources](resources.qmd)**: references, software and links
 
 ## Announcements
 
 ::: {.callout-note}
-**Course begins Fall 2026.** Materials and announcements will appear here as the semester progresses.
+No announcements yet. Check back for updates as the semester progresses.
 :::
