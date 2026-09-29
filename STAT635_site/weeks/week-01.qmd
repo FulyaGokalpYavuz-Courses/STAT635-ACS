@@ -1,0 +1,17 @@
+---
+title: "Week 1: Topic to be announced"
+description: "Details will be posted here."
+order: 1
+---
+
+## Overview
+
+To be added.
+
+## Reading
+
+- To be added.
+
+## Assignment
+
+- None yet.
