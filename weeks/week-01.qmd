@@ -18,20 +18,15 @@ description: "Mathematical notation, probability, likelihood, Bayesian methods, 
 
 ## Taylor's Theorem and Mathematical Limit Theory
 
-# Big O and Little o Notation
+## Big O and Little o Notation
 
 Big \(O\) and little \(o\) notation are used to describe the **relative behavior of functions** as their argument approaches a particular value or infinity.
 
-In computational statistics, these notations are especially useful for describing:
-
-- rates of convergence,
-- approximation errors,
-- remainder terms in Taylor expansions, and
-- asymptotic behavior of statistical procedures.
+In computational statistics, these notations are especially useful for describing rates of convergence, approximation errors, remainder terms in Taylor expansions, and asymptotic behavior of statistical procedures.
 
 ---
 
-## 1. Big O Notation
+### 1. Big O Notation
 
 Suppose \(f(n)\) and \(g(n)\) are two functions. We write
 
@@ -45,7 +40,7 @@ $$
 |f(n)|\leq M|g(n)|.
 $$
 
-### Interpretation
+#### Interpretation
 
 Informally,
 
@@ -63,7 +58,7 @@ Big \(O\) does **not** mean that \(f(n)=g(n)\). It also does not require the rat
 
 ---
 
-## 2. Example: Understanding Big O
+### 2. Example: Understanding Big O
 
 Consider
 
@@ -113,7 +108,7 @@ $$
 
 ---
 
-## 3. A Numerical Look at the Rates
+### 3. A Numerical Look at the Rates
 
 Consider a few values of \(n\):
 
@@ -132,7 +127,7 @@ Thus, \(1/n^2\) becomes negligible much more quickly.
 
 ---
 
-## 4. Visualizing the Rates of Convergence in R
+### 4. Visualizing the Rates of Convergence in R
 
 Let us compare
 
@@ -176,7 +171,7 @@ behaves like a constant multiple of \(1/n\) for large \(n\).
 
 ---
 
-## 5. Verifying the Big O Result
+### 5. Verifying the Big O Result
 
 Now let
 
@@ -241,7 +236,7 @@ $$
 
 ---
 
-## 6. Visualizing the Ratio in R
+### 6. Visualizing the Ratio in R
 
 A more direct way to understand Big \(O\) is to plot
 
@@ -285,7 +280,7 @@ The important observation is that the ratio remains bounded.
 
 ---
 
-# 7. Little o Notation
+## 7. Little o Notation
 
 Little \(o\) is a stronger statement.
 
@@ -325,7 +320,7 @@ requires the ratio to **converge to zero**.
 
 ---
 
-## 8. Is Our Example Also Little o?
+### 8. Is Our Example Also Little o?
 
 Recall that
 
@@ -383,7 +378,7 @@ This example illustrates an important difference between Big \(O\) and little \(
 
 ---
 
-## 9. An Example of Little o
+### 9. An Example of Little o
 
 Return to the decomposition
 
@@ -437,7 +432,7 @@ In words,
 
 ---
 
-## 10. Visualizing Little o in R
+### 10. Visualizing Little o in R
 
 We can visualize the ratio
 
@@ -469,7 +464,7 @@ This is precisely the behavior required by little \(o\).
 
 ---
 
-# 11. Dominant and Smaller-Order Terms
+## 11. Dominant and Smaller-Order Terms
 
 We can now describe the original expression more precisely:
 
@@ -513,7 +508,7 @@ identifies the dominant term explicitly and tells us that everything remaining i
 
 ---
 
-# 12. Big O vs. Little o
+## 12. Big O vs. Little o
 
 The distinction can be summarized as follows:
 
@@ -554,7 +549,7 @@ $$
 
 ---
 
-# 13. A Simple Example Near Zero
+## 13. A Simple Example Near Zero
 
 Big \(O\) and little \(o\) are not restricted to \(n\to\infty\). They can also describe behavior as a variable approaches a particular value.
 
@@ -588,7 +583,7 @@ This simple observation will be useful when we consider Taylor expansions.
 
 ---
 
-# 14. Connection to Taylor's Theorem
+## 14. Connection to Taylor's Theorem
 
 Suppose \(f\) is sufficiently differentiable around \(x_0\). A Taylor expansion gives
 
@@ -622,7 +617,7 @@ and therefore the Taylor approximation becomes increasingly accurate.
 
 ---
 
-## 15. First-Order Taylor Approximation and Little o
+### 15. First-Order Taylor Approximation and Little o
 
 For a differentiable function,
 
@@ -651,7 +646,7 @@ Thus, the error in the linear approximation becomes negligible relative to \(h\)
 
 ---
 
-## 16. Example: Taylor Expansion of \(e^h\)
+### 16. Example: Taylor Expansion of \(e^h\)
 
 Around \(h=0\),
 
@@ -700,7 +695,7 @@ The more terms we retain in the Taylor expansion, the smaller the order of the r
 
 ---
 
-# 17. Why Does This Matter in Statistics?
+## 17. Why Does This Matter in Statistics?
 
 Big \(O\) and little \(o\) notation appear frequently in asymptotic statistics.
 
@@ -732,7 +727,7 @@ The central idea remains the same:
 
 ---
 
-# Key Takeaways
+## Key Takeaways
 
 1. **Big \(O\)** describes an upper order of magnitude:
 
@@ -802,7 +797,7 @@ The central idea remains the same:
 
 ---
 
-## Reference
+### Reference
 
 Givens, G. H. and Hoeting, J. A. *Computational Statistics*. Section 1.2, Taylor's Theorem and Mathematical Limit Theory.
 
