@@ -1,0 +1,26 @@
+---
+order: 1
+title: "Review"
+description: "Mathematical notation, probability, likelihood, Bayesian methods, and Markov chains"
+---
+
+## Topics
+
+- Mathematical Notations
+- Taylor's Theorem and Mathematical Limit Theory
+- Statistical Notation and Probability Distributions
+- Likelihood Inference
+- Bayesian Inference
+- Statistical Limit Theory
+- Markov Chains
+
+## Activities
+
+- Install R and Python
+- Set up a GitHub account
+
+## Resources
+
+- [R installation guide](https://www.r-project.org/)
+- [Python installation guide](https://www.python.org/)
+- [Git and GitHub setup](https://docs.github.com/en/get-started)
