@@ -6,10 +6,11 @@ title: "Resources"
 
 No textbook is required. Lecture notes, research articles and selected readings are provided during the semester. Useful references:
 
-1. Robert, C. P., and Casella, G. (2004). *Monte Carlo Statistical Methods* (2nd ed.). Springer.
-2. Gentle, J. E. (2009). *Computational Statistics* (2nd ed.). Springer.
-3. Liu, J. S. (2001). *Monte Carlo Strategies in Scientific Computing*. Springer.
-4. Brooks, S., Gelman, A., Jones, G., and Meng, X.-L. (2011). *Handbook of Markov Chain Monte Carlo*. CRC Press.
+1. Givens, G. W., and Hoeting, J. A. (2013). *Computational Statistics* (2nd ed.). Wiley.
+2. Robert, C. P., and Casella, G. (2004). *Monte Carlo Statistical Methods* (2nd ed.). Springer.
+3. Gentle, J. E. (2009). *Computational Statistics* (2nd ed.). Springer.
+4. Liu, J. S. (2001). *Monte Carlo Strategies in Scientific Computing*. Springer.
+5. Brooks, S., Gelman, A., Jones, G., and Meng, X.-L. (2011). *Handbook of Markov Chain Monte Carlo*. CRC Press.
 
 ## Software
 
