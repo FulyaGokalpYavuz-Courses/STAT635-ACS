@@ -1,0 +1,28 @@
+project:
+  type: website
+
+website:
+  title: "STAT 635"
+  description: "Advanced Computational Statistics · METU Department of Statistics · Fall 2026"
+  navbar:
+    background: primary
+    left:
+      - href: index.qmd
+        text: Home
+      - href: syllabus.qmd
+        text: Syllabus
+      - href: schedule.qmd
+        text: Weekly Schedule
+      - href: resources.qmd
+        text: Resources
+  page-footer:
+    center: "STAT 635 Advanced Computational Statistics · Middle East Technical University · Fall 2026"
+
+format:
+  html:
+    theme:
+      light: [cosmo, metu-light.scss]
+      dark: [darkly, metu-dark.scss]
+    css: styles.css
+    toc: true
+    code-copy: true
