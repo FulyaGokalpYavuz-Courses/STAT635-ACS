@@ -14,6 +14,800 @@ description: "Mathematical notation, probability, likelihood, Bayesian methods, 
 - Statistical Limit Theory
 - Markov Chains
 
+::: {.panel-tabset}
+
+## Taylor's Theorem and Mathematical Limit Theory
+
+# Big O and Little o Notation
+
+Big \(O\) and little \(o\) notation are used to describe the **relative behavior of functions** as their argument approaches a particular value or infinity.
+
+In computational statistics, these notations are especially useful for describing:
+
+- rates of convergence,
+- approximation errors,
+- remainder terms in Taylor expansions, and
+- asymptotic behavior of statistical procedures.
+
+---
+
+## 1. Big O Notation
+
+Suppose \(f(n)\) and \(g(n)\) are two functions. We write
+
+$$
+f(n)=O(g(n)), \qquad n\to\infty,
+$$
+
+if there exists a constant \(M>0\) such that, for all sufficiently large \(n\),
+
+$$
+|f(n)|\leq M|g(n)|.
+$$
+
+### Interpretation
+
+Informally,
+
+> \(f(n)=O(g(n))\) means that \(f(n)\) does not become large relative to \(g(n)\).
+
+Equivalently, the ratio
+
+$$
+\frac{|f(n)|}{|g(n)|}
+$$
+
+remains **bounded** as \(n\to\infty\).
+
+Big \(O\) does **not** mean that \(f(n)=g(n)\). It also does not require the ratio \(f(n)/g(n)\) to converge to zero.
+
+---
+
+## 2. Example: Understanding Big O
+
+Consider
+
+$$
+f(n)=\frac{n+1}{3n^2}.
+$$
+
+We can rewrite this expression as
+
+$$
+f(n)
+=
+\frac{n}{3n^2}+\frac{1}{3n^2}
+=
+\frac{1}{3n}+\frac{1}{3n^2}.
+$$
+
+Both terms converge to zero as \(n\to\infty\), but they do not converge at the same rate.
+
+The term
+
+$$
+\frac{1}{n^2}
+$$
+
+converges to zero faster than
+
+$$
+\frac{1}{n}.
+$$
+
+Therefore, for large \(n\), the behavior of \(f(n)\) is mainly determined by
+
+$$
+\frac{1}{3n}.
+$$
+
+We call this the **dominant term**.
+
+Thus, we expect
+
+$$
+\boxed{
+\frac{n+1}{3n^2}=O(n^{-1}).
+}
+$$
+
+---
+
+## 3. A Numerical Look at the Rates
+
+Consider a few values of \(n\):
+
+| \(n\) | \(1/n\) | \(1/n^2\) |
+|---:|---:|---:|
+| 10 | 0.1 | 0.01 |
+| 100 | 0.01 | 0.0001 |
+| 1000 | 0.001 | 0.000001 |
+
+When \(n\) increases by a factor of 10,
+
+- \(1/n\) decreases by a factor of 10,
+- \(1/n^2\) decreases by a factor of 100.
+
+Thus, \(1/n^2\) becomes negligible much more quickly.
+
+---
+
+## 4. Visualizing the Rates of Convergence in R
+
+Let us compare
+
+$$
+\frac{n+1}{3n^2}, \qquad \frac{1}{n}, \qquad \text{and} \qquad \frac{1}{n^2}.
+$$
+
+```r
+n <- 1:100
+
+f  <- (n + 1) / (3 * n^2)
+g1 <- 1 / n
+g2 <- 1 / n^2
+
+plot(n, f,
+     type = "l",
+     lwd = 2,
+     xlab = "n",
+     ylab = "Value",
+     main = "Comparing Rates of Convergence",
+     ylim = range(c(f, g1, g2)))
+
+lines(n, g1, lty = 2, lwd = 2)
+lines(n, g2, lty = 3, lwd = 2)
+
+legend("topright",
+       legend = c("(n+1)/(3n^2)", "1/n", "1/n^2"),
+       lty = c(1, 2, 3),
+       lwd = 2)
+```
+
+The graph shows that \(1/n^2\) approaches zero considerably faster than \(1/n\).
+
+The function
+
+$$
+f(n)=\frac{n+1}{3n^2}
+$$
+
+behaves like a constant multiple of \(1/n\) for large \(n\).
+
+---
+
+## 5. Verifying the Big O Result
+
+Now let
+
+$$
+g(n)=\frac{1}{n}.
+$$
+
+To compare \(f(n)\) and \(g(n)\), consider their ratio:
+
+$$
+\frac{f(n)}{g(n)}
+=
+\frac{\frac{n+1}{3n^2}}{\frac{1}{n}}.
+$$
+
+Simplifying,
+
+$$
+\frac{f(n)}{g(n)}
+=
+\frac{n+1}{3n}
+=
+\frac{1}{3}+\frac{1}{3n}.
+$$
+
+Therefore,
+
+$$
+\lim_{n\to\infty}
+\frac{f(n)}{g(n)}
+=
+\frac13.
+$$
+
+The ratio approaches a finite value and is therefore bounded.
+
+Hence,
+
+$$
+\boxed{
+f(n)=O(n^{-1}).
+}
+$$
+
+### Important observation
+
+For Big \(O\), the ratio does **not** have to converge to zero.
+
+It only needs to remain bounded.
+
+In this example,
+
+$$
+\frac{f(n)}{1/n}\longrightarrow\frac13,
+$$
+
+which is perfectly consistent with
+
+$$
+f(n)=O(n^{-1}).
+$$
+
+---
+
+## 6. Visualizing the Ratio in R
+
+A more direct way to understand Big \(O\) is to plot
+
+$$
+\frac{f(n)}{1/n}.
+$$
+
+```r
+n <- 1:100
+
+f <- (n + 1) / (3 * n^2)
+g <- 1 / n
+
+ratio <- f / g
+
+plot(n, ratio,
+     type = "l",
+     lwd = 2,
+     xlab = "n",
+     ylab = "f(n) / (1/n)",
+     main = "Why is f(n) = O(1/n)?")
+
+abline(h = 1/3, lty = 2)
+```
+
+Since
+
+$$
+\frac{f(n)}{1/n}
+=
+\frac13+\frac{1}{3n},
+$$
+
+the curve approaches the horizontal line
+
+$$
+y=\frac13.
+$$
+
+The important observation is that the ratio remains bounded.
+
+---
+
+# 7. Little o Notation
+
+Little \(o\) is a stronger statement.
+
+We write
+
+$$
+f(n)=o(g(n)), \qquad n\to\infty,
+$$
+
+if
+
+$$
+\boxed{
+\lim_{n\to\infty}\frac{f(n)}{g(n)}=0.
+}
+$$
+
+### Interpretation
+
+Informally,
+
+> \(f(n)=o(g(n))\) means that \(f(n)\) becomes negligible relative to \(g(n)\).
+
+Therefore, the main distinction is:
+
+$$
+f(n)=O(g(n))
+$$
+
+requires the ratio to remain **bounded**, whereas
+
+$$
+f(n)=o(g(n))
+$$
+
+requires the ratio to **converge to zero**.
+
+---
+
+## 8. Is Our Example Also Little o?
+
+Recall that
+
+$$
+f(n)=\frac{n+1}{3n^2}.
+$$
+
+We already found that
+
+$$
+\frac{f(n)}{1/n}
+=
+\frac13+\frac{1}{3n}.
+$$
+
+Therefore,
+
+$$
+\lim_{n\to\infty}
+\frac{f(n)}{1/n}
+=
+\frac13.
+$$
+
+The limit is not zero.
+
+Thus,
+
+$$
+\boxed{
+\frac{n+1}{3n^2}\neq o(n^{-1}).
+}
+$$
+
+We have therefore established that
+
+$$
+\boxed{
+\frac{n+1}{3n^2}=O(n^{-1})
+}
+$$
+
+but
+
+$$
+\boxed{
+\frac{n+1}{3n^2}\neq o(n^{-1}).
+}
+$$
+
+This example illustrates an important difference between Big \(O\) and little \(o\):
+
+> For Big \(O\), the relative size must remain bounded.  
+> For little \(o\), the relative size must converge to zero.
+
+---
+
+## 9. An Example of Little o
+
+Return to the decomposition
+
+$$
+\frac{n+1}{3n^2}
+=
+\frac{1}{3n}
++
+\frac{1}{3n^2}.
+$$
+
+Now consider only the second term:
+
+$$
+r(n)=\frac{1}{3n^2}.
+$$
+
+Compare it with
+
+$$
+g(n)=\frac1n.
+$$
+
+The ratio is
+
+$$
+\frac{r(n)}{g(n)}
+=
+\frac{\frac{1}{3n^2}}{\frac1n}
+=
+\frac{1}{3n}.
+$$
+
+As \(n\to\infty\),
+
+$$
+\frac{1}{3n}\to0.
+$$
+
+Therefore,
+
+$$
+\boxed{
+\frac{1}{3n^2}=o(n^{-1}).
+}
+$$
+
+In words,
+
+> \(1/(3n^2)\) becomes negligible relative to \(1/n\) as \(n\) becomes large.
+
+---
+
+## 10. Visualizing Little o in R
+
+We can visualize the ratio
+
+$$
+\frac{1/(3n^2)}{1/n}.
+$$
+
+```r
+n <- 1:100
+
+r <- 1 / (3 * n^2)
+g <- 1 / n
+
+ratio <- r / g
+
+plot(n, ratio,
+     type = "l",
+     lwd = 2,
+     xlab = "n",
+     ylab = "r(n) / (1/n)",
+     main = "An Example of Little o")
+
+abline(h = 0, lty = 2)
+```
+
+In this case, the ratio approaches zero.
+
+This is precisely the behavior required by little \(o\).
+
+---
+
+# 11. Dominant and Smaller-Order Terms
+
+We can now describe the original expression more precisely:
+
+$$
+\frac{n+1}{3n^2}
+=
+\underbrace{\frac{1}{3n}}_{\text{dominant term}}
++
+\underbrace{\frac{1}{3n^2}}_{\text{smaller-order term}}.
+$$
+
+Since
+
+$$
+\frac{1}{3n^2}=o(n^{-1}),
+$$
+
+we can write
+
+$$
+\boxed{
+\frac{n+1}{3n^2}
+=
+\frac{1}{3n}+o(n^{-1}).
+}
+$$
+
+This statement gives us more information than simply writing
+
+$$
+\frac{n+1}{3n^2}=O(n^{-1}).
+$$
+
+The expression
+
+$$
+\frac{1}{3n}+o(n^{-1})
+$$
+
+identifies the dominant term explicitly and tells us that everything remaining is negligible relative to \(1/n\).
+
+---
+
+# 12. Big O vs. Little o
+
+The distinction can be summarized as follows:
+
+| Notation | Mathematical condition | Interpretation |
+|---|---|---|
+| \(f(n)=O(g(n))\) | \(\frac{|f(n)|}{|g(n)|}\) remains bounded | \(f\) is no larger in order than \(g\) |
+| \(f(n)=o(g(n))\) | \(\frac{f(n)}{g(n)}\to0\) | \(f\) becomes negligible relative to \(g\) |
+
+Thus,
+
+$$
+\boxed{
+f(n)=o(g(n))
+\quad\Longrightarrow\quad
+f(n)=O(g(n)).
+}
+$$
+
+The converse is not necessarily true.
+
+Our example demonstrates this:
+
+$$
+\frac{n+1}{3n^2}=O(n^{-1}),
+$$
+
+but
+
+$$
+\frac{n+1}{3n^2}\neq o(n^{-1}).
+$$
+
+On the other hand,
+
+$$
+\frac{1}{3n^2}=o(n^{-1}).
+$$
+
+---
+
+# 13. A Simple Example Near Zero
+
+Big \(O\) and little \(o\) are not restricted to \(n\to\infty\). They can also describe behavior as a variable approaches a particular value.
+
+For example, consider \(h\to0\).
+
+We have
+
+$$
+h^2=o(h)
+$$
+
+because
+
+$$
+\frac{h^2}{h}=h\to0.
+$$
+
+Thus, \(h^2\) becomes negligible relative to \(h\) as \(h\to0\).
+
+For example:
+
+| \(h\) | \(h\) | \(h^2\) |
+|---:|---:|---:|
+| 0.1 | 0.1 | 0.01 |
+| 0.01 | 0.01 | 0.0001 |
+| 0.001 | 0.001 | 0.000001 |
+
+When \(h\) decreases by a factor of 10, \(h^2\) decreases by a factor of 100.
+
+This simple observation will be useful when we consider Taylor expansions.
+
+---
+
+# 14. Connection to Taylor's Theorem
+
+Suppose \(f\) is sufficiently differentiable around \(x_0\). A Taylor expansion gives
+
+$$
+f(x)
+=
+\sum_{i=0}^{n}
+\frac{f^{(i)}(x_0)}{i!}
+(x-x_0)^i
++
+R_n.
+$$
+
+Under appropriate regularity conditions, the remainder satisfies
+
+$$
+R_n
+=
+O\left(|x-x_0|^{n+1}\right).
+$$
+
+This notation tells us the **order of the approximation error**.
+
+As \(x\to x_0\),
+
+$$
+|x-x_0|^{n+1}\to0,
+$$
+
+and therefore the Taylor approximation becomes increasingly accurate.
+
+---
+
+## 15. First-Order Taylor Approximation and Little o
+
+For a differentiable function,
+
+$$
+f(x_0+h)
+=
+f(x_0)+hf'(x_0)+o(h),
+\qquad h\to0.
+$$
+
+The term \(o(h)\) represents the remainder.
+
+If we denote the remainder by \(R(h)\), then
+
+$$
+R(h)=o(h)
+$$
+
+means
+
+$$
+\frac{R(h)}{h}\to0.
+$$
+
+Thus, the error in the linear approximation becomes negligible relative to \(h\).
+
+---
+
+## 16. Example: Taylor Expansion of \(e^h\)
+
+Around \(h=0\),
+
+$$
+e^h
+=
+1+h+\frac{h^2}{2}
++\frac{h^3}{6}
++\cdots.
+$$
+
+If we keep only the constant and linear terms,
+
+$$
+e^h=1+h+o(h).
+$$
+
+Why?
+
+The leading term in the remainder is
+
+$$
+\frac{h^2}{2}.
+$$
+
+Relative to \(h\),
+
+$$
+\frac{h^2/2}{h}
+=
+\frac{h}{2}
+\to0.
+$$
+
+Thus, the remainder is negligible relative to \(h\).
+
+If we retain the quadratic term as well, we can write
+
+$$
+e^h
+=
+1+h+\frac{h^2}{2}+o(h^2).
+$$
+
+The more terms we retain in the Taylor expansion, the smaller the order of the remaining approximation error.
+
+---
+
+# 17. Why Does This Matter in Statistics?
+
+Big \(O\) and little \(o\) notation appear frequently in asymptotic statistics.
+
+For example, an estimator may satisfy an expansion such as
+
+$$
+\hat{\theta}_n-\theta
+=
+\frac{A_n}{\sqrt{n}}
++
+o_p(n^{-1/2}).
+$$
+
+The first term determines the main asymptotic behavior, while the remainder becomes negligible relative to \(n^{-1/2}\).
+
+This same idea appears repeatedly in:
+
+- asymptotic distributions,
+- maximum likelihood estimation,
+- numerical approximations,
+- optimization algorithms,
+- Monte Carlo methods,
+- approximation errors, and
+- Taylor-based derivations.
+
+The central idea remains the same:
+
+> **Identify the dominant term and determine whether the remaining terms are of the same order or a smaller order.**
+
+---
+
+# Key Takeaways
+
+1. **Big \(O\)** describes an upper order of magnitude:
+
+   $$
+   f(n)=O(g(n))
+   $$
+
+   means that \(f(n)/g(n)\) remains bounded.
+
+2. **Little \(o\)** describes a strictly smaller order:
+
+   $$
+   f(n)=o(g(n))
+   $$
+
+   means that
+
+   $$
+   \frac{f(n)}{g(n)}\to0.
+   $$
+
+3. Little \(o\) is stronger than Big \(O\):
+
+   $$
+   f(n)=o(g(n))
+   \quad\Longrightarrow\quad
+   f(n)=O(g(n)).
+   $$
+
+4. For the example
+
+   $$
+   f(n)=\frac{n+1}{3n^2},
+   $$
+
+   we have
+
+   $$
+   f(n)=O(n^{-1}),
+   $$
+
+   but
+
+   $$
+   f(n)\neq o(n^{-1}).
+   $$
+
+5. The smaller term satisfies
+
+   $$
+   \frac{1}{3n^2}=o(n^{-1}),
+   $$
+
+   allowing us to write
+
+   $$
+   \boxed{
+   \frac{n+1}{3n^2}
+   =
+   \frac{1}{3n}
+   +
+   o(n^{-1}).
+   }
+   $$
+
+6. These concepts provide a convenient language for describing **approximation error and asymptotic behavior**, which will be used throughout computational statistics.
+
+---
+
+## Reference
+
+Givens, G. H. and Hoeting, J. A. *Computational Statistics*. Section 1.2, Taylor's Theorem and Mathematical Limit Theory.
+
+:::
+
 ## Activities
 
 - Install R and Python
