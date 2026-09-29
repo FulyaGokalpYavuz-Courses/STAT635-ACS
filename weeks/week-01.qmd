@@ -1,17 +1,26 @@
 ---
-title: "Week 1: Topic to be announced"
-description: "Details will be posted here."
 order: 1
+title: "Week 1: Review"
+description: "Mathematical notation, probability, likelihood, Bayesian methods, and Markov chains"
 ---
 
-## Overview
+## Topics
 
-To be added.
+- Mathematical Notations
+- Taylor's Theorem and Mathematical Limit Theory
+- Statistical Notation and Probability Distributions
+- Likelihood Inference
+- Bayesian Inference
+- Statistical Limit Theory
+- Markov Chains
 
-## Reading
+## Activities
 
-- To be added.
+- Install R and Python
+- Set up a GitHub account
 
-## Assignment
+## Resources
 
-- None yet.
+- [R installation guide](https://www.r-project.org/)
+- [Python installation guide](https://www.python.org/)
+- [Git and GitHub setup](https://docs.github.com/en/get-started)
