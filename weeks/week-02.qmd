@@ -1,0 +1,22 @@
+---
+order: 2
+title: "Week 2: Optimization "
+description: "Optimization and Solving Nonlinear Equations"
+---
+
+## Topics
+
+- Univariate Problems
+- Newton's Method
+- Fisher Scoring
+- Secant Method
+- Fixed Point Iteration
+
+## Activities
+
+- Run R/Python Codes
+- Solve a parametric parameter estimation problem
+
+## Resources
+
+- Givens, G. W., and Hoeting, J. A. (2013). Computational Statistics (2nd ed.). Wiley.
