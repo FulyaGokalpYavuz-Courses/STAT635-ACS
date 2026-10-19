@@ -25,3 +25,4 @@ description: "Mathematical notation, probability, likelihood, Bayesian methods, 
 - [Python installation guide](https://www.python.org/)
 - [Git and GitHub setup](https://docs.github.com/en/get-started)
 - Lecture notes can be found at ODTUClass.
+- [Edit this page on GitHub](https://github.com/FulyaGokalpYavuz-Courses/STAT635-ACS/edit/main/weeks/week-01.qmd)
