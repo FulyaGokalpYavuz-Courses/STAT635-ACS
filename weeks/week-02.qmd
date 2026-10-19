@@ -19,7 +19,6 @@ description: "Optimization and Solving Nonlinear Equations"
 
 ## Resources
 
-- Givens, G. W., and Hoeting, J. A. (2013). Computational Statistics (2nd ed.). Wiley.
 - Lecture notes can be found at ODTUClass: https://odtuclass2026f.metu.edu.tr
+- Givens, G. W., and Hoeting, J. A. (2013). Computational Statistics (2nd ed.). Wiley.
 - HW1 added to ODTUClass.
-- [Edit this page on GitHub](https://github.com/FulyaGokalpYavuz-Courses/STAT635-ACS/edit/main/weeks/week-02.qmd)
