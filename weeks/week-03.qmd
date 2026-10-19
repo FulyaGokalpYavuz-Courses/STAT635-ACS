@@ -5,39 +5,31 @@ description: "Multivariate optimization: gradients, Hessians, Newton and Quasi-N
 page-layout: full
 ---
 
-Source: Givens & Hoeting, "Computational Statistics" (2nd edition), Part I — Optimization, Section 2.2: "Multivariate Problems".
+## Overview
+A concise lecture-style summary of multivariate optimization focusing on derivative-based and numerical methods.
 
-## Goals
-- Learn fundamentals of multivariate optimization problems.
-- Use derivative-based approaches (gradient, Hessian) to locate local and global optima.
-- Review constrained and unconstrained optimization methods for multivariate functions.
+## Learning goals
+- Understand gradient and Hessian concepts for multivariate functions.
+- Apply second-order tests to classify critical points.
+- Implement Newton and Quasi-Newton methods for optimization.
+- Formulate constrained problems using Lagrange multipliers.
 
-## Reading
-- Givens & Hoeting, Computational Statistics (2nd ed.), Part I — Optimization, Section 2.2: "Multivariate Problems".
+## Outline
+- Definitions: f(x), ∇f(x), H(x)
+- Second-order conditions and tests
+- Multivariate Newton's method (derivation and algorithm)
+- Line search and step-size selection
+- Quasi-Newton methods (BFGS overview)
+- Constrained optimization: Lagrange multipliers (brief)
 
-## Suggested topics and headings
-1. Definitions and notation
-   - Multivariate function f(x), gradient ∇f(x), Hessian H(x).
-   - Critical points: local minima, maxima, and saddle points.
-2. Analytical tests
-   - Second-order conditions using the Hessian (positive definite, negative definite, indefinite).
-3. Numerical methods
-   - Multivariate Newton's method
-   - Direction methods and line search
-   - Quasi-Newton methods (brief introduction to BFGS)
-4. Constrained optimization
-   - Lagrange multipliers for equality constraints
-   - Brief discussion of inequality constraints and active-set ideas
-5. Applications and examples
-   - Simple two-variable examples comparing Newton and BFGS
-   - Numerical example with R or Python: computing gradients and using optimize/minimize routines
+## Examples and code
+- Two-variable example comparing Newton and BFGS (R/Python)
+- Use optim()/scipy.optimize.minimize for practice
 
-## Exercises / Project suggestions
-- Work through a book example: solve an optimization problem analytically and verify with a numerical method.
-- Use BFGS (R: optim(), Python: scipy.optimize.minimize) to find the minimum of a test function and compare results.
-
-## Notes
-- Lecture notes, slides, and example code (R/Python) will be added.
+## Homework
+- Read Givens & Hoeting (Part I, Section 2.2) and work the example on p. XX.
+- Apply BFGS to the Rosenbrock function and report convergence behavior.
 
 ## Resources
 - Lecture notes can be found at ODTUClass: https://odtuclass2026f.metu.edu.tr
+- Givens, G. W., and Hoeting, J. A. (2013). Computational Statistics (2nd ed.). Wiley.
