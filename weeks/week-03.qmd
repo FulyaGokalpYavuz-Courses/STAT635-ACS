@@ -40,5 +40,4 @@ Source: Givens & Hoeting, "Computational Statistics" (2nd edition), Part I — O
 - Lecture notes, slides, and example code (R/Python) will be added.
 
 ## Resources
-- Lecture notes can be found at ODTUClass.
-- [Edit this page on GitHub](https://github.com/FulyaGokalpYavuz-Courses/STAT635-ACS/edit/main/weeks/week-03.qmd)
+- Lecture notes can be found at ODTUClass: https://odtuclass2026f.metu.edu.tr
