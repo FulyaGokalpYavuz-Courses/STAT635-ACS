@@ -50,3 +50,26 @@ dd {
     border-left-color: #ff6b81;
   }
 }
+
+/* Edit page icon (fixed, top-right) */
+.edit-page a {
+  position: fixed;
+  top: 0.9rem;
+  right: 4.5rem;
+  background: #ffffffcc;
+  color: #222;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  text-decoration: none;
+  font-size: 1rem;
+  z-index: 9999;
+}
+
+@media (prefers-color-scheme: dark) {
+  .edit-page a {
+    background: #222222cc;
+    color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+}
