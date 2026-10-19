@@ -16,4 +16,6 @@ page-layout: full
 
 Topics, readings and assignments are posted here week by week. Meetings are on **Wednesdays, 09:40 to 12:30**.
 
+**Lecture notes can be found at ODTUClass: https://odtuclass2026f.metu.edu.tr**
+
 The final weeks of the semester are reserved for research project development.
