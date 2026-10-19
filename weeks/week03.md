@@ -1,38 +1,38 @@
-# Hafta 3 — Optimizasyon: Çok Değişkenli Problemler
+# Week 3 — Optimization: Multivariate Problems
 
-Kaynak: Givens ve Hoeting, "Computational Statistics", 2nd edition — Part I: Optimization, Section 2.2 (Multivariate Problems).
+Source: Givens & Hoeting, "Computational Statistics" (2nd edition), Part I — Optimization, Section 2.2: "Multivariate Problems".
 
-Amaç
-- Çok değişkenli optimizasyon problemlerinin temellerini öğrenmek.
-- Gradien ve Hessian gibi türevsel yaklaşımlar ile yerel ve küresel optimumların bulunması.
-- Çok değişkenli fonksiyonlarda kısıtlı ve kısıtsız optimizasyon yöntemlerini gözden geçirmek.
+Goals
+- Learn fundamentals of multivariate optimization problems.
+- Use derivative-based approaches (gradient, Hessian) to locate local and global optima.
+- Review constrained and unconstrained optimization methods for multivariate functions.
 
-Okuma
+Reading
 - Givens & Hoeting, Computational Statistics (2nd ed.), Part I — Optimization, Section 2.2: "Multivariate Problems".
 
-Önerilen içerik ve başlıklar
-1. Tanımlar ve notasyon
-   - Çok değişkenli fonksiyon f(x), gradient ∇f(x), Hessian H(x).
-   - Kritik noktalar: yerel minimum, maksimum, eyer noktaları.
-2. Analitik testler
-   - Hessian kullanarak ikinci mertebe şartları.
-3. Sayısal yöntemler
-   - Çok değişkenli Newton yöntemi
-   - Doğrultu ve line-search (azaltma) yöntemleri
-   - Quasi-Newton yöntemleri (BFGS gibi) ��� kısa giriş
-4. Kısıtlı optimizasyon
-   - Lagrange çarpanları ile eşitlik kısıtları
-   - Kısıtlu çözümler için kısa fikir (e.g., aktif küme yaklaşımları)
-5. Uygulamalar ve örnekler
-   - Basit iki-değişkenli örneklerle Newton ve BFGS karşılaştırması
-   - R (veya Python) ile sayısal örnek: gradient hesaplama ve optimize() kullanımı
+Suggested topics and headings
+1. Definitions and notation
+   - Multivariate function f(x), gradient ∇f(x), Hessian H(x).
+   - Critical points: local minima, maxima, and saddle points.
+2. Analytical tests
+   - Second-order conditions using the Hessian (positive definite, negative definite, indefinite).
+3. Numerical methods
+   - Multivariate Newton's method
+   - Direction methods and line search
+   - Quasi-Newton methods (brief introduction to BFGS)
+4. Constrained optimization
+   - Lagrange multipliers for equality constraints
+   - Brief discussion of inequality constraints and active-set ideas
+5. Applications and examples
+   - Simple two-variable examples comparing Newton and BFGS
+   - Numerical example with R or Python: computing gradients and using optimize/minimize routines
 
-Ödev / Problem önerileri
-- Kitaptaki örnekleri takip ederek küçük bir optimizasyon problemi çözün (analitik ve sayısal sonuçları karşılaştırın).
-- Bir BFGS uygulaması kullanarak bir test fonksiyonunun minimumunu bulun (R: optim(), Python: scipy.optimize.minimize).
+Exercises / Project suggestions
+- Work through a book example: solve an optimization problem analytically and verify with a numerical method.
+- Use BFGS (R: optim(), Python: scipy.optimize.minimize) to find the minimum of a test function and compare results.
 
-Notlar
-- Ders notları, sunum slaytları ve örnek kodlar (R/Python) eklenecek.
+Notes
+- Lecture notes, slides, and example code (R/Python) will be added.
 
-İlgili dosya
-- Bu içerik weeks/week03.md altında eklendi.
+Related file
+- This content is added as weeks/week03.md.
