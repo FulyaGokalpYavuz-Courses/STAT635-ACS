@@ -17,8 +17,11 @@ description: "Optimization and Solving Nonlinear Equations"
 - Run R/Python Codes
 - Solve a parametric parameter estimation problem
 
+## Homework
+
+- HW1: added to ODTUClass (materials and submission instructions will be posted there).
+
 ## Resources
 
 - Lecture notes can be found at ODTUClass: https://odtuclass2026f.metu.edu.tr
 - Givens, G. W., and Hoeting, J. A. (2013). Computational Statistics (2nd ed.). Wiley.
-- HW1 added to ODTUClass.
